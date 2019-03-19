@@ -1,6 +1,6 @@
 # debian-helm
 
-Debian package for helm.sh
+Debian package for [helm.sh](https://helm.sh)
 
 ## License
 
