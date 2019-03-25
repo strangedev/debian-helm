@@ -1,5 +1,5 @@
 FROM debian
-RUN mkdir out
+RUN apt update -y && apt install -y curl && mkdir out
 WORKDIR /build
 COPY buildenv .
-CMD ./build.sh
+ENTRYPOINT ["./build.sh"]

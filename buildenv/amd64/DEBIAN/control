@@ -1,9 +1,0 @@
-Section: misc
-Priority: optional
-Package: helm
-Version: 2.13.0
-Architecture: amd64
-Description: The Kubernetes Package Manager
-Maintainer: Noah Hummel <hummel@marvelous.systems>
-Vcs-Browser: https://github.com/helm/helm
-Vcs-Git: https://github.com/helm/helm.git

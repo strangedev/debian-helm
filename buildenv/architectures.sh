@@ -1,0 +1,1 @@
+export ARCHITECTURES="amd64 arm arm64 i386 ppc64le s390x"
