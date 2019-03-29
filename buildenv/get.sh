@@ -33,12 +33,16 @@ if [ -z $VERSION ]; then
 fi
 
 for architecture in $ARCHITECTURES; do
+	# copy package template and remove .gitkeep
 	cp -r TEMPLATE "./${architecture}"
+	rm "./${architecture}/usr/local/bin/.gitkeep"
 
+	# set version and architecture in DEBIAN/control 
 	versionEscaped=$(echo "$VERSION" | sed "s/\./\\\./g")
 	sed -i "s/{{VERSION}}/${versionEscaped}/g" "${architecture}/DEBIAN/control"
 	sed -i "s/{{ARCHITECTURE}}/${architecture}/g" "${architecture}/DEBIAN/control"
 
+	# get binary release and unpack
 	curl $(get_release_url "$VERSION" "$architecture") \
 		| tar -xz \
 		-C "./${architecture}/usr/local/bin/" \
